@@ -7,7 +7,6 @@
 //
 
 public class iDevice: NSObject {
-    
     /**
      Get the running device's type
      */
@@ -24,7 +23,6 @@ public class iDevice: NSObject {
             return .unKnown
         }
     }
-    
 }
 
 /**
