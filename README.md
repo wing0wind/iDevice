@@ -22,7 +22,7 @@ pod 'iDevice'
 
 ## Author
 
-wing0wind@gmail.com, bi@team-lab.com
+wing0wind@gmail.com
 
 ## License
 
