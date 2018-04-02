@@ -1,0 +1,6 @@
+framework module iDevice {
+  umbrella header "iDevice-umbrella.h"
+
+  export *
+  module * { export * }
+}

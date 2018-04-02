@@ -1,0 +1,22 @@
+{
+  "name": "iDevice",
+  "version": "0.1.0",
+  "summary": "A short description of iDevice.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wing0wind@gmail.com/iDevice",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wing0wind@gmail.com": "bi@team-lab.com"
+  },
+  "source": {
+    "git": "https://github.com/wing0wind@gmail.com/iDevice.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "iDevice/Classes/**/*"
+}
