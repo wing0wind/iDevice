@@ -20,8 +20,23 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYB-gX-7X5">
+                                <rect key="frame" x="162" y="321" width="52.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OYB-gX-7X5" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="I2q-1T-pZ8"/>
+                            <constraint firstItem="OYB-gX-7X5" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="lRv-vX-DFM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deviceInfoLabel" destination="OYB-gX-7X5" id="2Qa-et-T0y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

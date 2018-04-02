@@ -6,6 +6,27 @@
 //  Copyright © 2018年 wing0wind. All rights reserved.
 //
 
+public class iDevice: NSObject {
+    
+    /**
+     Get the running device's type
+     */
+    public class func deviceType() -> DeviceType {
+        var size: Int = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](repeating: 0, count: Int(size))
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        
+        let deviceName = String( cString: machine)
+        if let deviceType = DeviceType(rawValue: deviceName) {
+            return deviceType
+        } else {
+            return .unKnown
+        }
+    }
+    
+}
+
 /**
  Monitor Type
  */

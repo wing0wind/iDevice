@@ -42,9 +42,9 @@
 		607FACE51AFB9204008FA782 /* iDevice_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iDevice_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		8C273B62710FE532CEAFFC0B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A0512C0F83497356CD8B633D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B8705C629FBDC743BD8E8A3E /* iDevice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = iDevice.podspec; path = ../iDevice.podspec; sourceTree = "<group>"; };
+		8C273B62710FE532CEAFFC0B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A0512C0F83497356CD8B633D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B8705C629FBDC743BD8E8A3E /* iDevice.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iDevice.podspec; path = ../iDevice.podspec; sourceTree = "<group>"; };
 		E4D9904E8062A67454CA0168 /* Pods-iDevice_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDevice_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iDevice_Example/Pods-iDevice_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F8DCAD0656DDA91FA79C8CB7 /* Pods-iDevice_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDevice_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iDevice_Tests/Pods-iDevice_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8996YKA75V;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8996YKA75V;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -522,6 +524,7 @@
 			baseConfigurationReference = E4D9904E8062A67454CA0168 /* Pods-iDevice_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8996YKA75V;
 				INFOPLIST_FILE = iDevice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -537,6 +540,7 @@
 			baseConfigurationReference = 5675DE6E88A03A29E00B8C95 /* Pods-iDevice_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8996YKA75V;
 				INFOPLIST_FILE = iDevice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -551,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1801439DFEA79FFBCC33F597 /* Pods-iDevice_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8996YKA75V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -572,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8DCAD0656DDA91FA79C8CB7 /* Pods-iDevice_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 8996YKA75V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
