@@ -2,8 +2,8 @@
 //  iDevice.swift
 //  ReduxFramework
 //
-//  Created by wing0wind on 2018/04/02.
-//  Copyright © 2018年 wing0wind. All rights reserved.
+//  Created by wing0wind@gmail.com on 04/02/2018.
+//  Copyright (c) 2018 wing0wind@gmail.com. All rights reserved.
 //
 
 public class iDevice: NSObject {

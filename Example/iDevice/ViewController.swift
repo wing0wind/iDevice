@@ -11,7 +11,6 @@ import iDevice
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var deviceInfoLabel: UILabel!
     
     override func viewDidLoad() {
