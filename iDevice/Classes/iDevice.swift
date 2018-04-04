@@ -43,6 +43,85 @@ public enum DeviceMonitorType {
     case iPodTouchLarge
 }
 
+public enum MachineName: String {
+    case unKnown    = ""
+    // iPhone
+    case iPhone4_1  = "iPhone4,1"
+    case iPhone5_1  = "iPhone5,1"
+    case iPhone5_2  = "iPhone5,2"
+    case iPhone5_3  = "iPhone5,3"
+    case iPhone5_4  = "iPhone5,4"
+    case iPhone6_1  = "iPhone6,1"
+    case iPhone6_2  = "iPhone6,2"
+    case iPhone7_1  = "iPhone7,1"
+    case iPhone7_2  = "iPhone7,2"
+    case iPhone8_1  = "iPhone8,1"
+    case iPhone8_2  = "iPhone8,2"
+    case iPhone8_4  = "iPhone8,4"
+    case iPhone9_1  = "iPhone9,1"
+    case iPhone9_2  = "iPhone9,2"
+    case iPhone9_3  = "iPhone9,3"
+    case iPhone9_4  = "iPhone9,4"
+    case iPhone10_1 = "iPhone10,1"
+    case iPhone10_2 = "iPhone10,2"
+    case iPhone10_3 = "iPhone10,3"
+    case iPhone10_4 = "iPhone10,4"
+    case iPhone10_5 = "iPhone10,5"
+    case iPhone10_6 = "iPhone10,6"
+    // iPad
+    case iPad1_1    = "iPad1,1"
+    case iPad2_1    = "iPad2,1"
+    case iPad2_2    = "iPad2,2"
+    case iPad2_3    = "iPad2,3"
+    case iPad2_4    = "iPad2,4"
+    case iPad2_5    = "iPad2,5"
+    case iPad2_6    = "iPad2,6"
+    case iPad2_7    = "iPad2,7"
+    case iPad3_1    = "iPad3,1"
+    case iPad3_2    = "iPad3,2"
+    case iPad3_3    = "iPad3,3"
+    case iPad3_4    = "iPad3,4"
+    case iPad3_5    = "iPad3,5"
+    case iPad3_6    = "iPad3,6"
+    case iPad4_1    = "iPad4,1"
+    case iPad4_2    = "iPad4,2"
+    case iPad4_3    = "iPad4,3"
+    case iPad4_4    = "iPad4,4"
+    case iPad4_5    = "iPad4,5"
+    case iPad4_6    = "iPad4,6"
+    case iPad4_7    = "iPad4,7"
+    case iPad4_8    = "iPad4,8"
+    case iPad4_9    = "iPad4,9"
+    case iPad5_1    = "iPad5,1"
+    case iPad5_2    = "iPad5,2"
+    case iPad5_3    = "iPad5,3"
+    case iPad5_4    = "iPad5,4"
+    case iPad6_3    = "iPad6,3"
+    case iPad6_4    = "iPad6,4"
+    case iPad6_7    = "iPad6,7"
+    case iPad6_8    = "iPad6,8"
+    case iPad6_11   = "iPad6,11"
+    case iPad6_12   = "iPad6,12"
+    case iPad7_1    = "iPad7,1"
+    case iPad7_2    = "iPad7,2"
+    case iPad7_3    = "iPad7,3"
+    case iPad7_4    = "iPad7,4"
+    // iPod
+    case iPod1_1    = "iPod1,1"
+    case iPod2_1    = "iPod2,1"
+    case iPod3_1    = "iPod3,1"
+    case iPod4_1    = "iPod4,1"
+    case iPod5_1    = "iPod5,1"
+    case iPod7_1    = "iPod7,1"
+    
+    // Other
+    case AudioAccessory1_1 = "AudioAccessory1,1"
+    
+    // Simulator
+    case i386       = "i386"
+    case x86_64     = "x86_64"
+}
+    
 /**
  Device Type
  */
