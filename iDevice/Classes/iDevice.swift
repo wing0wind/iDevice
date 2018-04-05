@@ -7,6 +7,14 @@
 //
 
 public class iDevice: NSObject {
+    
+    struct DeviceInfo {
+        fileprivate var machineName: String
+        fileprivate var deviceMonitorType: DeviceMonitorType
+        
+    }
+    
+    private(set) static var info: DeviceInfo? = nil
     /**
      Get the running device's type
      */
