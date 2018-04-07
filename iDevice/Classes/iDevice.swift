@@ -8,13 +8,20 @@
 
 public class iDevice: NSObject {
     
-    struct DeviceInfo {
-        fileprivate var machineName: String
-        fileprivate var deviceMonitorType: DeviceMonitorType
-        
+    public struct DeviceInfo {
+        public var machineName: MachineName
+        public var deviceMonitorType: DeviceMonitorType
+        init(machine: String) {
+            if let deviceType = MachineName(rawValue: machine) {
+                machineName = deviceType
+            } else {
+                machineName = .unKnown
+            }
+            deviceMonitorType = .unKnown
+        }
     }
     
-    private(set) static var info: DeviceInfo? = nil
+    private(set) static var deviceInfo: DeviceInfo? = nil
     /**
      Get the running device's type
      */
@@ -31,13 +38,31 @@ public class iDevice: NSObject {
             return .unKnown
         }
     }
+    
+    public class func info() -> DeviceInfo {
+        if let deviceInfo = deviceInfo {
+           return deviceInfo
+        } else {
+            deviceInfo = DeviceInfo.init(machine: getMachineName())
+            return deviceInfo!
+        }
+        
+    }
+    
+    private class func getMachineName() -> String {
+        var size: Int = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](repeating: 0, count: Int(size))
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        return String( cString: machine)
+    }
 }
 
 /**
  Monitor Type
  */
 public enum DeviceMonitorType {
-    case UnKnown
+    case unKnown
     case iPhone4
     case iPhone5
     case iPhone6
@@ -282,7 +307,7 @@ public enum DeviceType: String {
     public func monitorType() -> DeviceMonitorType {
         switch self {
         case .unKnown:
-            return .UnKnown
+            return .unKnown
         case .iPhone4_1:
             return .iPhone4
         case .iPhone5_1, .iPhone5_2, .iPhone5_3, .iPhone5_4, .iPhone6_1, .iPhone6_2:

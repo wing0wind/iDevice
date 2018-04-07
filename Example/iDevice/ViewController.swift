@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        deviceInfoLabel.text = iDevice.deviceType().name()
+        deviceInfoLabel.text = iDevice.info().machineName.rawValue
     }
 
 }
