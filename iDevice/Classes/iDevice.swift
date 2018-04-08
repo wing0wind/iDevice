@@ -9,15 +9,13 @@
 public class iDevice: NSObject {
     
     public struct DeviceInfo {
-        public var machineName: MachineName
+        public var machine: Machine
         public var deviceMonitorType: DeviceMonitorType
-        init(machine: String) {
-            if let deviceType = MachineName(rawValue: machine) {
-                machineName = deviceType
-            } else {
-                machineName = .unKnown
-            }
+        public var internalName:String
+        init(machineString: String) {
+            machine = Machine(rawValue: machineString) ?? .unKnown
             deviceMonitorType = .unKnown
+            internalName = machine.internalName()
         }
     }
     
@@ -43,7 +41,7 @@ public class iDevice: NSObject {
         if let deviceInfo = deviceInfo {
            return deviceInfo
         } else {
-            deviceInfo = DeviceInfo.init(machine: getMachineName())
+            deviceInfo = DeviceInfo.init(machineString: getMachineName())
             return deviceInfo!
         }
         
@@ -76,7 +74,7 @@ public enum DeviceMonitorType {
     case iPodTouchLarge
 }
 
-public enum MachineName: String {
+public enum Machine: String {
     case unKnown    = ""
     // iPhone
     case iPhone4_1  = "iPhone4,1"
@@ -153,6 +151,82 @@ public enum MachineName: String {
     // Simulator
     case i386       = "i386"
     case x86_64     = "x86_64"
+    
+    /**
+     Internal Name
+     */
+    public func internalName() -> String {
+        switch self {
+        case .unKnown: return ""
+        case .iPhone4_1: return "iPhone 4S"
+        case .iPhone5_1: return "iPhone 5 (A1428)"
+        case .iPhone5_2: return "iPhone 5 (A1429)"
+        case .iPhone5_3: return "iPhone 5c (A1456/A1532)"
+        case .iPhone5_4: return "iPhone 5c (A1507/A1516/A1529)"
+        case .iPhone6_1: return "iPhone 5s (A1433/A1453)"
+        case .iPhone6_2: return "iPhone 5s (A1457/A1518/A1530)"
+        case .iPhone7_1: return "iPhone 6 Plus"
+        case .iPhone7_2: return "iPhone 6"
+        case .iPhone8_1: return "iPhone 6S"
+        case .iPhone8_2: return "iPhone 6S Plus"
+        case .iPhone8_4: return "iPhone SE"
+        case .iPhone9_1: return "iPhone 7"
+        case .iPhone9_2: return "iPhone 7 Plus"
+        case .iPhone9_3: return "iPhone 7"
+        case .iPhone9_4: return "iPhone 7 Plus"
+        case .iPhone10_1, .iPhone10_4: return "iPhone 8"
+        case .iPhone10_2, .iPhone10_5: return "iPhone 8 Plus"
+        case .iPhone10_3, .iPhone10_6: return "iPhone X"
+        case .iPad1_1: return "iPad"
+        case .iPad2_1: return "iPad 2 (Wi-Fi)"
+        case .iPad2_2: return "iPad 2 (GSM)"
+        case .iPad2_3: return "iPad 2 (CDMA)"
+        case .iPad2_4: return "iPad 2 (Wi-Fi, revised)"
+        case .iPad2_5: return "iPad mini (Wi-Fi)"
+        case .iPad2_6: return "iPad mini (A1454)"
+        case .iPad2_7: return "iPad mini (A1455)"
+        case .iPad3_1: return "iPad (3rd gen, Wi-Fi)"
+        case .iPad3_2: return "iPad (3rd gen, Wi-Fi+LTE Verizon)"
+        case .iPad3_3: return "iPad (3rd gen, Wi-Fi+LTE AT&T)"
+        case .iPad3_4: return "iPad (4th gen, Wi-Fi)"
+        case .iPad3_5: return "iPad (4th gen, A1459)"
+        case .iPad3_6: return "iPad (4th gen, A1460)"
+        case .iPad4_1: return "iPad Air (Wi-Fi)"
+        case .iPad4_2: return "iPad Air (Wi-Fi+LTE)"
+        case .iPad4_3: return "iPad Air (Rev)"
+        case .iPad4_4: return "iPad mini 2 (Wi-Fi)"
+        case .iPad4_5: return "iPad mini 2 (Wi-Fi+LTE)"
+        case .iPad4_6: return "iPad mini 2 (Rev)"
+        case .iPad4_7: return "iPad mini 3 (Wi-Fi)"
+        case .iPad4_8: return "iPad mini 3 (A1600)"
+        case .iPad4_9: return "iPad mini 3 (A1601)"
+        case .iPad5_3: return "iPad Air 2 (Wi-Fi)"
+        case .iPad5_4: return "iPad Air 2 (Wi-Fi+LTE)"
+        case .iPad6_8, .iPad6_7: return "iPad Pro (12.9-inch)"
+        case .iPod1_1: return "iPod touch"
+        case .iPod2_1: return "iPod touch (2nd gen)"
+        case .iPod3_1: return "iPod touch (3rd gen)"
+        case .iPod4_1: return "iPod touch (4th gen)"
+        case .iPod5_1: return "iPod touch (5th gen)"
+        case .iPod7_1: return "iPod touch (6th gen)"
+        case .iPad5_1:
+            return "iPad mini 4 (A1538)"
+        case .iPad5_2:
+            return "iPad mini 4 (A1550)"
+        case .iPad6_3, .iPad6_4:
+            return "iPad Pro (9.7-inch)"
+        case .iPad6_11, .iPad6_12:
+            return "iPad (5th generation)"
+        case .iPad7_1, .iPad7_2:
+            return "iPad Pro (12.9-inch, 2nd generation)"
+        case .iPad7_3, .iPad7_4:
+            return "iPad Pro (10.5-inch)"
+        case .AudioAccessory1_1:
+            return "HomePod"
+        case .i386, .x86_64:
+            return "Simulator"
+        }
+    }
 }
     
 /**
