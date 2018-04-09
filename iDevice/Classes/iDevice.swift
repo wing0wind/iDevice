@@ -76,6 +76,7 @@ public enum DeviceMonitorType {
 
 public enum Machine: String {
     case unKnown    = ""
+    
     // iPhone
     case iPhone4_1  = "iPhone4,1"
     case iPhone5_1  = "iPhone5,1"
@@ -99,15 +100,13 @@ public enum Machine: String {
     case iPhone10_4 = "iPhone10,4"
     case iPhone10_5 = "iPhone10,5"
     case iPhone10_6 = "iPhone10,6"
+    
     // iPad
     case iPad1_1    = "iPad1,1"
     case iPad2_1    = "iPad2,1"
     case iPad2_2    = "iPad2,2"
     case iPad2_3    = "iPad2,3"
     case iPad2_4    = "iPad2,4"
-    case iPad2_5    = "iPad2,5"
-    case iPad2_6    = "iPad2,6"
-    case iPad2_7    = "iPad2,7"
     case iPad3_1    = "iPad3,1"
     case iPad3_2    = "iPad3,2"
     case iPad3_3    = "iPad3,3"
@@ -117,14 +116,6 @@ public enum Machine: String {
     case iPad4_1    = "iPad4,1"
     case iPad4_2    = "iPad4,2"
     case iPad4_3    = "iPad4,3"
-    case iPad4_4    = "iPad4,4"
-    case iPad4_5    = "iPad4,5"
-    case iPad4_6    = "iPad4,6"
-    case iPad4_7    = "iPad4,7"
-    case iPad4_8    = "iPad4,8"
-    case iPad4_9    = "iPad4,9"
-    case iPad5_1    = "iPad5,1"
-    case iPad5_2    = "iPad5,2"
     case iPad5_3    = "iPad5,3"
     case iPad5_4    = "iPad5,4"
     case iPad6_3    = "iPad6,3"
@@ -137,6 +128,22 @@ public enum Machine: String {
     case iPad7_2    = "iPad7,2"
     case iPad7_3    = "iPad7,3"
     case iPad7_4    = "iPad7,4"
+    case iPad7_5    = "iPad7,5"
+    case iPad7_6    = "iPad7,6"
+    
+    // iPad mini
+    case iPad2_5    = "iPad2,5"
+    case iPad2_6    = "iPad2,6"
+    case iPad2_7    = "iPad2,7"
+    case iPad4_4    = "iPad4,4"
+    case iPad4_5    = "iPad4,5"
+    case iPad4_6    = "iPad4,6"
+    case iPad4_7    = "iPad4,7"
+    case iPad4_8    = "iPad4,8"
+    case iPad4_9    = "iPad4,9"
+    case iPad5_1    = "iPad5,1"
+    case iPad5_2    = "iPad5,2"
+    
     // iPod
     case iPod1_1    = "iPod1,1"
     case iPod2_1    = "iPod2,1"
@@ -152,12 +159,15 @@ public enum Machine: String {
     case i386       = "i386"
     case x86_64     = "x86_64"
     
+    // TODO: return a struct with all infomation (n:1 func)
     /**
      Internal Name
      */
     public func internalName() -> String {
         switch self {
         case .unKnown: return ""
+            
+        // iPhone
         case .iPhone4_1: return "iPhone 4S"
         case .iPhone5_1: return "iPhone 5 (A1428)"
         case .iPhone5_2: return "iPhone 5 (A1429)"
@@ -177,14 +187,13 @@ public enum Machine: String {
         case .iPhone10_1, .iPhone10_4: return "iPhone 8"
         case .iPhone10_2, .iPhone10_5: return "iPhone 8 Plus"
         case .iPhone10_3, .iPhone10_6: return "iPhone X"
+        
+        // iPad
         case .iPad1_1: return "iPad"
         case .iPad2_1: return "iPad 2 (Wi-Fi)"
         case .iPad2_2: return "iPad 2 (GSM)"
         case .iPad2_3: return "iPad 2 (CDMA)"
         case .iPad2_4: return "iPad 2 (Wi-Fi, revised)"
-        case .iPad2_5: return "iPad mini (Wi-Fi)"
-        case .iPad2_6: return "iPad mini (A1454)"
-        case .iPad2_7: return "iPad mini (A1455)"
         case .iPad3_1: return "iPad (3rd gen, Wi-Fi)"
         case .iPad3_2: return "iPad (3rd gen, Wi-Fi+LTE Verizon)"
         case .iPad3_3: return "iPad (3rd gen, Wi-Fi+LTE AT&T)"
@@ -194,37 +203,51 @@ public enum Machine: String {
         case .iPad4_1: return "iPad Air (Wi-Fi)"
         case .iPad4_2: return "iPad Air (Wi-Fi+LTE)"
         case .iPad4_3: return "iPad Air (Rev)"
-        case .iPad4_4: return "iPad mini 2 (Wi-Fi)"
-        case .iPad4_5: return "iPad mini 2 (Wi-Fi+LTE)"
-        case .iPad4_6: return "iPad mini 2 (Rev)"
-        case .iPad4_7: return "iPad mini 3 (Wi-Fi)"
-        case .iPad4_8: return "iPad mini 3 (A1600)"
-        case .iPad4_9: return "iPad mini 3 (A1601)"
         case .iPad5_3: return "iPad Air 2 (Wi-Fi)"
         case .iPad5_4: return "iPad Air 2 (Wi-Fi+LTE)"
-        case .iPad6_8, .iPad6_7: return "iPad Pro (12.9-inch)"
-        case .iPod1_1: return "iPod touch"
-        case .iPod2_1: return "iPod touch (2nd gen)"
-        case .iPod3_1: return "iPod touch (3rd gen)"
-        case .iPod4_1: return "iPod touch (4th gen)"
-        case .iPod5_1: return "iPod touch (5th gen)"
-        case .iPod7_1: return "iPod touch (6th gen)"
-        case .iPad5_1:
-            return "iPad mini 4 (A1538)"
-        case .iPad5_2:
-            return "iPad mini 4 (A1550)"
         case .iPad6_3, .iPad6_4:
             return "iPad Pro (9.7-inch)"
+        case .iPad6_8, .iPad6_7: return "iPad Pro (12.9-inch)"
         case .iPad6_11, .iPad6_12:
             return "iPad (5th generation)"
         case .iPad7_1, .iPad7_2:
             return "iPad Pro (12.9-inch, 2nd generation)"
         case .iPad7_3, .iPad7_4:
             return "iPad Pro (10.5-inch)"
+        case .iPad7_5, .iPad7_6:
+            return "iPad (6th generation)"
+        
+        // iPad mini
+        case .iPad2_5: return "iPad mini (Wi-Fi)"
+        case .iPad2_6: return "iPad mini (A1454)"
+        case .iPad2_7: return "iPad mini (A1455)"
+        case .iPad4_4: return "iPad mini 2 (Wi-Fi)"
+        case .iPad4_5: return "iPad mini 2 (Wi-Fi+LTE)"
+        case .iPad4_6: return "iPad mini 2 (Rev)"
+        case .iPad4_7: return "iPad mini 3 (Wi-Fi)"
+        case .iPad4_8: return "iPad mini 3 (A1600)"
+        case .iPad4_9: return "iPad mini 3 (A1601)"
+        case .iPad5_1:
+            return "iPad mini 4 (A1538)"
+        case .iPad5_2:
+            return "iPad mini 4 (A1550)"
+           
+        // iPod
+        case .iPod1_1: return "iPod touch"
+        case .iPod2_1: return "iPod touch (2nd gen)"
+        case .iPod3_1: return "iPod touch (3rd gen)"
+        case .iPod4_1: return "iPod touch (4th gen)"
+        case .iPod5_1: return "iPod touch (5th gen)"
+        case .iPod7_1: return "iPod touch (6th gen)"
+        
+        // Other
         case .AudioAccessory1_1:
             return "HomePod"
+        
+        // Simulator
         case .i386, .x86_64:
             return "Simulator"
+
         }
     }
 }
